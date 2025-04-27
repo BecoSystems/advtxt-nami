@@ -1,12 +1,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Criação de Fluxograma usando LaTeX
 %
-% Assunto: escrever aqui um comentário com uma
-%          breve explicação do exercício
+% Assunto: Fazer um jogo com duas escolhas, mas se voce errar a primeira delas, o jogo termina e voce perde, caso acerte o jogo continua e tem direito a escolha da segunda opcao, na qual, dependendo da
+% escolha, voce pode ganhar ou perder.
 %
 % Autores:
-%     Nome do Aluno 1
-%     Nome do Aluno 2
+%     Kauwane Fidelis de Souza
+%     Thaísa Ribeiro Pimentel
 %     Nome do Aluno 3
 %
 % Coordenação:
@@ -50,8 +50,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % capa %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{Fluxograma: nome do fluxograma}
-\author{Autor1 \\ Autor2 \\ Autor3}
+\title{Fluxograma: Princess Rescue}
+\author{Kauwane Fidelis de Souza\\ Thaísa Ribeiro Pimente}
 
 \begin{document}
 
@@ -76,11 +76,13 @@
 
 \begin{abstract}
 
-\textbf{Assunto:} Programa tal tal
+\textbf{Assunto:}  Programa Princess Rescue é um jogo texto de duas escolhas.
 
 % descrever em poucas palavras seu projeto aqui
 
-O programa tal e tal faz isso e isso. Neste artigo iremos apresentar o seu fluxograma completo
+O programa tem interação com o usuário, onde ele assume o papel do Gato de Botas em uma jornada para salvar a princesa Kate.
+O usuário deve tomar decisões difíceis e selecionar a arma correta para vencer o jogo com sucesso,
+resultando em um final onde kate é salva e delvidada ao seu pai, o rei Alemão. Neste artigo iremos apresentar o seu fluxograma completo.
 % e (opcionalmente) o seu algoritmo.
 
 Após a modelagem do fluxograma e desenvolvimento da lógica de programação em algoritmo,
@@ -105,7 +107,9 @@ o programa será implementado na Linguagem de Programação \texttt{C}
 
 % Descrever melhor seu projeto aqui
 
-Este programa faz isso, isso e \texttt{também em fonte mono-espaçada faz isso}.
+Este programa tem intera¸c˜ao com o usualario e permite que escolha entre as alternati-
+suas apresentações, dependendo de suas escolhas, o programa pode acabar se vocêˆe escolher
+”errado”ou pode acabar de o usu´ario escolher fixer a escolha ”certa”.
 
 O programa será modelado em \textit{fluxograma} em uma primeira fase, em seguida
 sua lógica será desenvolvida em formato de \textit{algoritmo}, para então
@@ -121,24 +125,26 @@ Exemplo de letra em \textit{itálico é com textit}, e em \textbf{bold face é c
 
 \begin{tikzpicture}
     % colocar nodos
-    \node (inicio) [startend] {Inicio};
-    \node (txta) [print, below of=inicio] {Texto A};
-    \node (inp1) [input, below of=txta] {objeto};
-    \node (tot1) [process, below of=inp1] {total $\leftarrow$ objeto + 1};
-    \node (maior) [decision, below of=tot1] {total $>$ M};
-    \node (sim) [print, right of=maior, node distance=4cm] {Total estourou};
-    \node (nao) [print, below of=maior, node distance=2.4cm] {Total ok};
-    \node (fim) [startend, below of=nao] {Fim};
+     \node (inicio) [startend] {Inicio};
+     \node (txta) [print, below of=inicio, text width = 12cm, node distance=4cm] {Bem vinda(o) ao mundo de aventuras do PRINCES RESCUE!
+Prepare-se para uma jornada repleta de escolhas difíceis e emoções, enquanto você, o destemido Gato de Botas, embarca em uma missão heróica para resgatar
+a adorável Princesa Katy da Fortaleza das Maldições e devolve-la ao seu pai, o rei Alemão.};
+     \node (inp1) [input, below of=txta, node distance=4cm, text width = 10cm] {Diante de você, dois caminhos e com cada um prometendo aventuras únicas e desafios emocionantes.
+         Escolha com sabedoria e embarque em jornada épica: Bosque dos Jubilos ou Praia das Chamas.};
+     \node (maior) [decision, below of=inp1, node distance=4cm] {Bosque dos Jubilos};
+     \node (sim) [print, right of=maior, node distance=12cm, text width=12cm] {Oh, que tristeza! Você escolheu o destino errado antes mesmo de começar sua jornada. Você acabou
+         escolhendo um caminho onde o Gato de Botas não tem condições de passar, ele não sabe nadar e você e acabou morrendo.};
+                         \node (nao) [print, below of=maior, node distance=4cm, text width = 10cm] {Bom trabalho! Você escolheu com sabedoria, a trilha do Bosque dos Jubilos se abre diante de você, revelando um cenário incrível.};
+       \node (fim) [startend, below of=nao, node distance=4cm] {Fim}
     % \node (vazio1) [empty, right of=fim, node distance=4cm] {};
     % Desenhar as setas
-    \path [line] (inicio) -- (txta);
-    \path [line] (txta) -- (inp1);
-    \path [line] (inp1) -- (tot1);
-    \path [line] (tot1) -- (maior);
-    \path [line] (maior) -- (sim);
-    \path [line] (sim) -- (vazio1) -- (fim);
-    \path [line] (maior) -- (nao);
-    \path [line] (nao) -- (fim);
+        \path [line] (inicio) -- (txta);
+        \path [line] (txta) -- (inp1);
+        \path [line] (inp1) -- (maior);
+        \path [line] (maior) -- (sim);
+        \path [line] (sim) -- (fim);
+        \path [line] (maior) -- (nao);
+        \path [line] (nao) -- (fim);
 \end{tikzpicture}
 
 
@@ -161,31 +167,20 @@ Exemplo de letra em \textit{itálico é com textit}, e em \textbf{bold face é c
 \subsection*{Discentes}
 
 \begin{enumerate}
-    \item \textbf{Nome Completo:} Fulano de Tal Um
+    \item \textbf{Nome Completo:}Kauwane Fidelis De Souza
     \begin{description}
-        \item [Email:] \email{blabla@poli.br}
-        \item [Endereço:]
-        \item [Matrícula:]
-        \item [CPF:]
-        \item [RG:]
-        \item [Telefone:]
+        \item [Email:] \email{kfs1@poli.br}
+        \item [Endereço:Rua Boa luz, Nobre]
+        \item [Matrícula:300890172]
+        \item [CPF:136.779.154-57]
+        \item [RG:10.870.221]
+        \item [Telefone:81.9.9826-1971]
         \item [Currículo Lattes:] \url{http://lattes.cnpq.br/nnnnn}
     \end{description}
 
-    \item \textbf{Nome Completo:} Fulano de Qual Dois
+\item \textbf{Nome Completo:}Thaísa Ribeiro Pimentel
     \begin{description}
-        \item [Email:] \email{blabla@poli.br}
-        \item [Endereço:]
-        \item [Matrícula:]
-        \item [CPF:]
-        \item [RG:]
-        \item [Telefone:]
-        \item [Currículo Lattes:] \url{http://lattes.cnpq.br/nnnnn}
-    \end{description}
-
-    \item \textbf{Nome Completo:} Fulano de Como Três
-    \begin{description}
-        \item [Email:] \email{blabla@poli.br}
+        \item [Email:] \email{trp@poli.br}
         \item [Endereço:]
         \item [Matrícula:]
         \item [CPF:]
@@ -223,7 +218,7 @@ Exemplo de letra em \textit{itálico é com textit}, e em \textbf{bold face é c
 \subsection*{Docentes}
 
 \begin{enumerate}
-    \item \textbf{Nome Completo:} Ruben Carlo Benante
+    \item \textbf{Nome Completo:}Ruben Carlo Benante
     \begin{description}
         \item [Email:] \email{rcb@upe.br}
         \item [Matrícula:] 11238-0
